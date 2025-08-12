@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FabrikApp — Gestión de producción offline</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Controla tu fábrica de limpieza y producción sin hojas de cálculo. FabrikApp te ayuda a gestionar fórmulas, inventario, producción y costos de manera automática. 100% offline.">
+    <meta name="keywords" content="gestión producción, inventario, fórmulas, fabricación, offline, limpieza, químicos">
+    <meta name="author" content="FabrikApp">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fjdvs.app/">
+    <meta property="og:title" content="FabrikApp — Gestión de producción offline">
+    <meta property="og:description" content="Controla tu fábrica de limpieza y producción sin hojas de cálculo. 100% offline.">
+    <meta property="og:image" content="https://fjdvs.app/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fjdvs.app/">
+    <meta property="twitter:title" content="FabrikApp — Gestión de producción offline">
+    <meta property="twitter:description" content="Controla tu fábrica de limpieza y producción sin hojas de cálculo. 100% offline.">
+    <meta property="twitter:image" content="https://fjdvs.app/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            400: '#34d399',
+                            500: '#10b981',
+                        },
+                        slate: {
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to bottom, #020617, #0f172a, #1e293b);
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.6);
+        }
+        .phone-glow {
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-30 glass-effect">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-3">
+                <div class="grid h-9 w-9 place-items-center rounded-xl bg-emerald-500 text-slate-900 font-black">F</div>
+                <span class="text-lg font-semibold tracking-tight">FabrikApp</span>
+            </div>
+            <nav class="hidden gap-8 md:flex text-sm text-slate-200">
+                <a href="#features" class="hover:text-white transition-colors">Funciones</a>
+                <a href="#screens" class="hover:text-white transition-colors">Vistas</a>
+                <a href="#pricing" class="hover:text-white transition-colors">Precio</a>
+                <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contacto</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="#download" class="rounded-xl bg-white/10 px-3 py-2 text-sm hover:bg-white/20 transition-colors">Descargar</a>
+                <a href="#cta" class="rounded-xl bg-emerald-500 px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-emerald-400 transition-colors">Prueba gratis 7 días</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-10 px-6 py-20 md:grid-cols-2">
+            <div>
+                <h1 class="text-4xl font-extrabold leading-tight md:text-5xl">
+                    Controla tu fábrica de limpieza y producción
+                    <span class="block text-emerald-400">sin hojas de cálculo.</span>
+                </h1>
+                <p class="mt-4 text-slate-300">
+                    FabrikApp te ayuda a gestionar fórmulas, inventario, producción y costos de manera automática. 100% offline, con importar/exportar y restablecer datos cuando lo necesites.
+                </p>
+                <div class="mt-6 flex flex-wrap items-center gap-3">
+                    <a id="cta" href="#download" class="rounded-2xl bg-emerald-500 px-5 py-3 font-semibold text-slate-900 hover:bg-emerald-400 transition-colors">Empieza tu prueba de 7 días</a>
+                    <a href="#features" class="rounded-2xl border border-white/20 px-5 py-3 font-semibold hover:bg-white/5 transition-colors">Ver funciones</a>
+                </div>
+                <p class="mt-3 text-xs text-slate-400">Sin tarjeta • Sin internet • Puedes exportar tus datos</p>
+            </div>
+            <div>
+                <div class="relative mx-auto w-full max-w-xl">
+                    <div class="absolute -inset-1 rounded-[32px] bg-emerald-500/20 blur-2xl phone-glow"></div>
+                    <div class="relative rounded-[32px] border border-white/10 bg-slate-900/60 p-4 shadow-2xl">
+                        <!-- Phone Mock -->
+                        <div class="relative mx-auto w-64">
+                            <div class="relative rounded-[32px] border-8 border-slate-800 bg-slate-900 p-2 shadow-2xl">
+                                <div class="aspect-[9/19.5] w-full rounded-[24px] bg-gradient-to-br from-slate-800 via-slate-700 to-slate-600 p-4">
+                                    <div class="flex items-center justify-between text-xs text-white">
+                                        <span>9:41</span>
+                                        <div class="flex items-center gap-1">
+                                            <div class="h-1 w-4 rounded-full bg-white/80"></div>
+                                            <div class="h-1 w-4 rounded-full bg-white/60"></div>
+                                            <div class="h-1 w-4 rounded-full bg-white/40"></div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4 space-y-3">
+                                        <div class="flex items-center justify-between">
+                                            <div class="h-6 w-20 rounded bg-emerald-500/20"></div>
+                                            <div class="h-6 w-6 rounded-full bg-emerald-500"></div>
+                                        </div>
+                                        <div class="h-8 w-full rounded-lg bg-white/10"></div>
+                                        <div class="space-y-2">
+                                            <div class="h-12 rounded-lg bg-white/5 border border-white/10"></div>
+                                            <div class="h-12 rounded-lg bg-white/5 border border-white/10"></div>
+                                            <div class="h-12 rounded-lg bg-emerald-500/20 border border-emerald-500/30"></div>
+                                        </div>
+                                        <div class="absolute bottom-4 left-4 right-4 flex justify-around">
+                                            <div class="h-1 w-8 rounded-full bg-emerald-500"></div>
+                                            <div class="h-1 w-8 rounded-full bg-white/20"></div>
+                                            <div class="h-1 w-8 rounded-full bg-white/20"></div>
+                                            <div class="h-1 w-8 rounded-full bg-white/20"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mx-auto mt-2 h-1 w-16 rounded-full bg-white/60"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="border-t border-white/10 bg-slate-900/40">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-6 py-8 md:grid-cols-3">
+            <div class="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="rounded-xl bg-white/10 p-3">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 text-emerald-400">
+                        <path fill="currentColor" d="M9 11l3 3L22 4l-2-2-8 8-3-3-2 2zm-5 3h8v2H4v-2zm0 4h12v2H4v-2z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="font-semibold">+100L por lote sin errores</div>
+                    <div class="text-sm text-slate-300">Checklist de producción</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="rounded-xl bg-white/10 p-3">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 text-emerald-400">
+                        <path fill="currentColor" d="M12 4a9 9 0 00-9 9h2a7 7 0 1114 0h2a9 9 0 00-9-9zm-1 9V8h2v5h-2zm-6 5h14v2H5v-2z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="font-semibold">Nunca más te quedas sin insumo</div>
+                    <div class="text-sm text-slate-300">Semáforo de inventario</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="rounded-xl bg-white/10 p-3">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 text-emerald-400">
+                        <path fill="currentColor" d="M12 6V3L8 7l4 4V8a4 4 0 014 4h2a6 6 0 00-6-6zm-6 6a6 6 0 006 6v3l4-4-4-4v3a4 4 0 01-4-4H6z"/>
+                    </svg>
+                </div>
+                <div>
+                    <div class="font-semibold">Tus costos siempre actualizados</div>
+                    <div class="text-sm text-slate-300">Sincronización interna</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="mx-auto max-w-7xl px-6 py-20">
+        <h2 class="text-center text-3xl font-bold md:text-4xl">Todo lo que necesitas para producir sin pausas</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-center text-slate-300">
+            Diseñado para fabricantes de productos de limpieza, químicos y manufactura que quieren control total y simplicidad.
+        </p>
+        <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="mb-3 inline-flex rounded-xl bg-emerald-500/15 p-3">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 text-emerald-400">
+                        <path fill="currentColor" d="M12 3a9 9 0 109 9h-2a7 7 0 11-7-7V3z"/>
+                        <path fill="currentColor" d="M12 7a5 5 0 105 5h-2a3 3 0 11-3-3V7z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold">100% Offline</h3>
+                <p class="mt-1 text-sm text-slate-300">Funciona sin internet. Tus datos se quedan en tu dispositivo.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="mb-3 inline-flex rounded-xl bg-emerald-500/15 p-3">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 text-emerald-400">
+                        <path fill="currentColor" d="M12 6V3L8 7l4 4V8a4 4 0 014 4h2a6 6 0 00-6-6zm-6 6a6 6 0 006 6v3l4-4-4-4v3a4 4 0 01-4-4H6z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Importar / Exportar / Restablecer</h3>
+                <p class="mt-1 text-sm text-slate-300">Control total de tus datos con un par de toques.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="mb-3 inline-flex rounded-xl bg-emerald-500/15 p-3">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 text-emerald-400">
+                        <path fill="currentColor" d="M9 11l3 3L22 4l-2-2-8 8-3-3-2 2zm-5 3h8v2H4v-2zm0 4h12v2H4v-2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Producción con checklist</h3>
+                <p class="mt-1 text-sm text-slate-300">Calcula cantidades por lote y marca ingredientes agregados.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+                <div class="mb-3 inline-flex rounded-xl bg-emerald-500/15 p-3">
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 text-emerald-400">
+                        <path fill="currentColor" d="M12 4a9 9 0 00-9 9h2a7 7 0 1114 0h2a9 9 0 00-9-9zm-1 9V8h2v5h-2zm-6 5h14v2H5v-2z"/>
+                    </svg>
+                </div>
+                <h3 class="text-lg font-semibold">Inventario con semáforo</h3>
+                <p class="mt-1 text-sm text-slate-300">Alertas visuales de stock bajo para no detener producción.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCREENS -->
+    <section id="screens" class="bg-slate-900/40">
+        <div class="mx-auto max-w-7xl px-6 py-20">
+            <h2 class="text-center text-3xl font-bold md:text-4xl">Así se ve trabajar con FabrikApp</h2>
+            <p class="mx-auto mt-3 max-w-2xl text-center text-slate-300">Mockups de las pantallas clave. Sustituye estas imágenes por capturas reales de tu app.</p>
+            <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+                <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                    <div class="aspect-[4/7] w-full rounded-xl bg-gradient-to-br from-slate-800 to-slate-700"></div>
+                    <div class="mt-3 font-semibold">Inventario con semáforo</div>
+                    <div class="text-sm text-slate-300">Coloca aquí tu captura real.</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                    <div class="aspect-[4/7] w-full rounded-xl bg-gradient-to-br from-slate-800 to-slate-700"></div>
+                    <div class="mt-3 font-semibold">Producción por lotes</div>
+                    <div class="text-sm text-slate-300">Coloca aquí tu captura real.</div>
+                </div>
+                <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-4">
+                    <div class="aspect-[4/7] w-full rounded-xl bg-gradient-to-br from-slate-800 to-slate-700"></div>
+                    <div class="mt-3 font-semibold">Fórmulas y costos</div>
+                    <div class="text-sm text-slate-300">Coloca aquí tu captura real.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="mx-auto max-w-7xl px-6 py-20">
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+                <h3 class="text-2xl font-bold">Prueba gratis</h3>
+                <p class="mt-2 text-slate-300">Acceso completo por 7 días. Sin tarjeta.</p>
+                <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                    <li>• Todas las funciones desbloqueadas</li>
+                    <li>• Importar y exportar datos</li>
+                    <li>• Restablecer cuando quieras</li>
+                </ul>
+                <a href="#download" class="mt-6 inline-block rounded-2xl bg-white/10 px-5 py-3 font-semibold hover:bg-white/20 transition-colors">Empezar prueba</a>
+            </div>
+            <div class="relative rounded-3xl border border-emerald-400/30 bg-emerald-500/10 p-8 ring-1 ring-inset ring-emerald-400/20">
+                <div class="absolute right-6 top-6 rounded-full bg-emerald-400 px-3 py-1 text-xs font-bold text-slate-900">Precio de introducción</div>
+                <h3 class="text-2xl font-bold">Plan anual</h3>
+                <div class="mt-2 flex items-end gap-2">
+                    <span class="text-5xl font-extrabold">$300</span>
+                    <span class="mb-1 text-sm text-slate-300">MXN / año</span>
+                </div>
+                <ul class="mt-4 space-y-2 text-sm text-slate-300">
+                    <li>• 100% offline, datos en tu dispositivo</li>
+                    <li>• Producción sin límites</li>
+                    <li>• Soporte por email</li>
+                </ul>
+                <a href="#download" class="mt-6 inline-block rounded-2xl bg-emerald-500 px-5 py-3 font-semibold text-slate-900 hover:bg-emerald-400 transition-colors">Comprar ahora</a>
+                <p class="mt-2 text-xs text-slate-400">Menos de $0.85 MXN al día.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mx-auto max-w-7xl px-6 py-20">
+        <h2 class="text-center text-3xl font-bold md:text-4xl">Preguntas frecuentes</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-center text-slate-300">
+            Todo lo que necesitas saber sobre FabrikApp antes de empezar.
+        </p>
+        <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+                <h3 class="text-lg font-semibold text-white">¿La app funciona sin internet?</h3>
+                <p class="mt-2 text-sm text-slate-300">Sí. FabrikApp es 100% offline. Puedes respaldar e importar tus datos cuando quieras.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+                <h3 class="text-lg font-semibold text-white">¿Cuánto cuesta?</h3>
+                <p class="mt-2 text-sm text-slate-300">300 MXN al año (precio de introducción) con 7 días de prueba gratis (versión completa).</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+                <h3 class="text-lg font-semibold text-white">¿Pierdo mis datos si reinstalo?</h3>
+                <p class="mt-2 text-sm text-slate-300">No si exportas tu respaldo antes. Luego puedes importar el archivo en el nuevo dispositivo.</p>
+            </div>
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+                <h3 class="text-lg font-semibold text-white">¿Para quién está pensada?</h3>
+                <p class="mt-2 text-sm text-slate-300">Para pequeños y medianos fabricantes de productos de limpieza, químicos y manufactura.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section id="contact" class="mx-auto max-w-4xl px-6 py-20">
+        <h2 class="text-center text-3xl font-bold md:text-4xl">¿Necesitas ayuda?</h2>
+        <p class="mx-auto mt-3 max-w-2xl text-center text-slate-300">
+            Escríbenos y te ayudamos a empezar con FabrikApp. Responde en menos de 24 horas.
+        </p>
+        <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2">
+            <!-- Contact Info -->
+            <div class="space-y-6">
+                <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+                    <h3 class="text-lg font-semibold text-white mb-4">Información de contacto</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3">
+                            <div class="rounded-lg bg-emerald-500/15 p-2">
+                                <svg viewBox="0 0 24 24" class="h-5 w-5 text-emerald-400">
+                                    <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-medium text-white">Email</div>
+                                <a href="mailto:fabrikapp.fjdvs@gmail.com" class="text-sm text-emerald-400 hover:underline">fabrikapp.fjdvs@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="rounded-lg bg-emerald-500/15 p-2">
+                                <svg viewBox="0 0 24 24" class="h-5 w-5 text-emerald-400">
+                                    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-medium text-white">WhatsApp</div>
+                                <a href="https://wa.me/522225603745" target="_blank" class="text-sm text-emerald-400 hover:underline">+52 222 560 3745</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="rounded-lg bg-emerald-500/15 p-2">
+                                <svg viewBox="0 0 24 24" class="h-5 w-5 text-emerald-400">
+                                    <path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-medium text-white">Respuesta rápida</div>
+                                <div class="text-sm text-slate-300">Menos de 24 horas</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+                <form id="contactForm" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-200 mb-2">Nombre</label>
+                        <input type="text" id="name" name="name" required class="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-200 mb-2">Email</label>
+                        <input type="email" id="email" name="email" required class="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-200 mb-2">Mensaje</label>
+                        <textarea id="message" name="message" rows="4" required class="w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-slate-400 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500" placeholder="Cuéntanos sobre tu fábrica y cómo podemos ayudarte..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full rounded-lg bg-emerald-500 px-4 py-3 font-semibold text-slate-900 hover:bg-emerald-400 transition-colors">
+                        Enviar mensaje
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="download" class="border-t border-white/10 bg-slate-900/40">
+        <div class="mx-auto max-w-7xl px-6 py-16 text-center">
+            <h3 class="text-3xl font-bold">Listo para producir sin pausas</h3>
+            <p class="mx-auto mt-2 max-w-2xl text-slate-300">Descarga FabrikApp desde la Play Store y empieza tu prueba gratuita de 7 días.</p>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-3">
+                <a href="#" class="inline-flex items-center gap-3 rounded-2xl border border-white/20 bg-black/40 px-4 py-2">
+                    <svg viewBox="0 0 512 512" class="h-6 w-6" aria-hidden>
+                        <path fill="currentColor" d="M325.3 234.3L104.6 13.6C97 6 84.7 11.3 84.7 22.3V490c0 11 12.3 16.3 19.9 8.7l220.7-220.7c4.7-4.7 4.7-12.3 0-17z"/>
+                        <path fill="currentColor" d="M357.3 202.3l34.5-34.5c7.6-7.6 20.5-2.2 20.5 8.5v159.4c0 10.7-12.9 16.1-20.5 8.5l-34.5-34.5-32-32c-4.7-4.7-4.7-12.3 0-17l32-32z"/>
+                    </svg>
+                    <div class="text-left">
+                        <div class="text-[10px] leading-none text-slate-300">Disponible en</div>
+                        <div class="-mt-0.5 text-sm font-semibold">Google Play</div>
+                    </div>
+                </a>
+                <a href="#contact" class="rounded-2xl border border-white/15 px-4 py-2 text-sm hover:bg-white/5 transition-colors">Contactar para APK</a>
+            </div>
+            <p class="mt-3 text-xs text-slate-400">¿No tienes Play Store? Escríbenos para obtener el APK.</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-white/10">
+        <div class="mx-auto grid max-w-7xl grid-cols-1 gap-6 px-6 py-10 md:grid-cols-3">
+            <div>
+                <div class="flex items-center gap-3">
+                    <div class="grid h-9 w-9 place-items-center rounded-xl bg-emerald-500 text-slate-900 font-black">F</div>
+                    <span class="font-semibold">FabrikApp</span>
+                </div>
+                <p class="mt-2 text-sm text-slate-300">Gestión de inventario, fórmulas y producción. 100% offline.</p>
+            </div>
+            <div class="text-sm text-slate-300">
+                <div class="font-semibold text-white">Producto</div>
+                <ul class="mt-2 space-y-1">
+                    <li><a href="#features" class="hover:underline">Funciones</a></li>
+                    <li><a href="#screens" class="hover:underline">Vistas</a></li>
+                    <li><a href="#pricing" class="hover:underline">Precio</a></li>
+                </ul>
+            </div>
+            <div class="text-sm text-slate-300">
+                <div class="font-semibold text-white">Legal</div>
+                <ul class="mt-2 space-y-1">
+                    <li><a href="#" class="hover:underline">Términos</a></li>
+                    <li><a href="#" class="hover:underline">Privacidad</a></li>
+                    <li><a href="#" class="hover:underline">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="pb-10 text-center text-xs text-slate-400">© 2024 FabrikApp. Todos los derechos reservados.</div>
+    </footer>
+
+    <!-- WhatsApp Widget -->
+    <div id="whatsapp-widget" class="fixed bottom-6 right-6 z-50">
+        <a href="https://wa.me/522225603745?text=Hola,%20me%20interesa%20FabrikApp%20para%20mi%20fábrica" 
+           target="_blank" 
+           class="flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600 transition-colors">
+            <svg viewBox="0 0 24 24" class="h-7 w-7" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form functionality
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // Create email body
+            const subject = 'Nuevo contacto desde FabrikApp Landing';
+            const body = `Nombre: ${name}\nEmail: ${email}\nMensaje: ${message}`;
+            
+            // Open email client
+            const mailtoLink = `mailto:fabrikapp.fjdvs@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(mailtoLink);
+            
+            // Show success message
+            alert('¡Gracias por tu mensaje! Se abrirá tu cliente de email para enviar el mensaje.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Track form submissions (for analytics)
+        function trackFormSubmission() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'form_submit', {
+                    'event_category': 'contact',
+                    'event_label': 'contact_form'
+                });
+            }
+        }
+
+        // Track WhatsApp clicks
+        document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'contact',
+                        'event_label': 'whatsapp_click'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
