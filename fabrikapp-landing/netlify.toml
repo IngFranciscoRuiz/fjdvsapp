@@ -1,42 +1,30 @@
 [build]
-  publish = "."
-  command = ""
+base = "fabrikapp-landing"  # indica la subcarpeta del proyecto
+publish = "."               # publica el contenido de esa base
+command = ""                # sin build
 
 [[headers]]
-  for = "/*"
+for = "/*"
   [headers.values]
-    X-Frame-Options = "DENY"
-    X-XSS-Protection = "1; mode=block"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "strict-origin-when-cross-origin"
-    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+  X-Frame-Options = "DENY"
+  X-XSS-Protection = "1; mode=block"
+  X-Content-Type-Options = "nosniff"
+  Referrer-Policy = "strict-origin-when-cross-origin"
+  Permissions-Policy = "camera=(), microphone=(), geolocation=()"
 
 [[headers]]
-  for = "*.html"
+for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
+  Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
-  for = "*.svg"
+for = "/*.svg"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+  Cache-Control = "public, max-age=31536000, immutable"
 
-# 1) La ruta que ya existe en el deploy (larga)
+# Alias corto para tu página de privacidad
 [[redirects]]
-  from = "/fabrikapp-landing/fabrikapp_privacidad.html"
-  to   = "/fabrikapp-landing/fabrikapp_privacidad.html"
-  status = 200
-  force = true
-
-# 2) Alias corto opcional
-[[redirects]]
-  from = "/fabrikapp_privacidad.html"
-  to   = "/fabrikapp-landing/fabrikapp_privacidad.html"
-  status = 200
-  force = true
-
-# 3) (Opcional) SPA fallback. Si lo necesitas, déjalo al FINAL.
-# [[redirects]]
-#   from = "/*"
-#   to   = "/index.html"
-#   status = 200
+from = "/fabrikapp_privacidad.html"
+to   = "/fabrikapp-landing/fabrikapp_privacidad.html"
+status = 200
+force = true
