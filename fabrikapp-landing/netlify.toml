@@ -21,17 +21,8 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# EXCEPCIÓN: sirve la política tal cual
-[[redirects]]
-  from = "/fabrikapp_privacidad.html"
-  to = "/fabrikapp_privacidad.html"
-  status = 200
- 
-
- 
-
-# SPA fallback para el resto
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
- status = 200
+# (Quita por ahora el catch-all)
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
