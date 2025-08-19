@@ -21,15 +21,22 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# EXCEPCIÓN: política de privacidad
-#[[redirects]]
- # from = "/fabrikapp_privacidad.html"
-  #to = "/fabrikapp_privacidad.html"
-  #status = 200
-  #force = true   # 👈 fuerza esta regla antes que la global
+# 1) La ruta que ya existe en el deploy (larga)
+[[redirects]]
+  from = "/fabrikapp-landing/fabrikapp_privacidad.html"
+  to   = "/fabrikapp-landing/fabrikapp_privacidad.html"
+  status = 200
+  force = true
 
-# SPA fallback
-#[[redirects]]
- # from = "/*"
-  #to = "/index.html"
-  #status = 200
+# 2) Alias corto opcional
+[[redirects]]
+  from = "/fabrikapp_privacidad.html"
+  to   = "/fabrikapp-landing/fabrikapp_privacidad.html"
+  status = 200
+  force = true
+
+# 3) (Opcional) SPA fallback. Si lo necesitas, déjalo al FINAL.
+# [[redirects]]
+#   from = "/*"
+#   to   = "/index.html"
+#   status = 200
