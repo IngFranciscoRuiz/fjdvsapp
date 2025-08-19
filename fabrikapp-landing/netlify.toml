@@ -26,9 +26,12 @@
   from = "/fabrikapp_privacidad.html"
   to = "/fabrikapp_privacidad.html"
   status = 200
+  force = true
+
+ 
 
 # SPA fallback para el resto
-#[[redirects]]
-#  from = "/*"
- # to = "/index.html"
- # status = 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+ status = 200
