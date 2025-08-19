@@ -2,7 +2,6 @@
   publish = "."
   command = ""
 
-# --- Tus headers, deja los que ya tienes ---
 [[headers]]
   for = "/*"
   [headers.values]
@@ -22,21 +21,21 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# --- 1) La ruta que YA funciona (larga) ---
+# 1) La ruta que ya existe en el deploy (larga)
 [[redirects]]
   from = "/fabrikapp-landing/fabrikapp_privacidad.html"
   to   = "/fabrikapp-landing/fabrikapp_privacidad.html"
   status = 200
   force = true
 
-# --- 2) Alias corto opcional ---
+# 2) Alias corto opcional
 [[redirects]]
   from = "/fabrikapp_privacidad.html"
   to   = "/fabrikapp-landing/fabrikapp_privacidad.html"
   status = 200
   force = true
 
-# --- (Opcional) SPA fallback, SOLO si lo necesitas ---
+# 3) (Opcional) SPA fallback. Si lo necesitas, déjalo al FINAL.
 # [[redirects]]
 #   from = "/*"
 #   to   = "/index.html"
