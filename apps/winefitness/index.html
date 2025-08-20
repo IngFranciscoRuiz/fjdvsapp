@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Win-E Fitness | App de Entrenamiento</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="App completa de entrenamiento con rutinas personalizadas, seguimiento de progreso y tips fitness para alcanzar tus objetivos de forma saludable.">
+    <meta name="keywords" content="fitness, entrenamiento, rutinas, salud, ejercicio, app móvil">
+    <meta name="author" content="FJDVS">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to bottom, #020617, #0f172a, #1e293b);
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.6);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-30 glass-effect">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-3">
+                <a href="../../" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div class="grid h-8 w-8 place-items-center rounded-lg bg-primary-500 text-dark-900 font-black">F</div>
+                    <span class="text-lg font-semibold">FJDVS</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-lg font-bold">Win-E Fitness</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="../../" class="rounded-xl bg-white/10 px-3 py-2 text-sm hover:bg-white/20 transition-colors">Volver</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+                    Win-E 
+                    <span class="text-primary-400">Fitness</span>
+                </h1>
+                <p class="mt-6 text-lg leading-8 text-slate-300 max-w-3xl mx-auto">
+                    App completa de entrenamiento con rutinas personalizadas, seguimiento de progreso y tips fitness 
+                    para alcanzar tus objetivos de forma saludable.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="#download" class="rounded-xl bg-primary-500 px-6 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Descargar App
+                    </a>
+                    <a href="#features" class="text-sm font-semibold leading-6 text-slate-300 hover:text-white transition-colors">
+                        Ver características <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+                    Características Principales
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-slate-700/50">
+                    <div class="grid h-12 w-12 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-lg mb-4">💪</div>
+                    <h3 class="text-xl font-semibold mb-4">Rutinas Personalizadas</h3>
+                    <p class="text-slate-300">Rutinas adaptadas a tu nivel y objetivos específicos.</p>
+                </div>
+                
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-slate-700/50">
+                    <div class="grid h-12 w-12 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-lg mb-4">📊</div>
+                    <h3 class="text-xl font-semibold mb-4">Seguimiento de Progreso</h3>
+                    <p class="text-slate-300">Monitorea tu evolución con estadísticas detalladas.</p>
+                </div>
+                
+                <div class="bg-dark-800/50 rounded-2xl p-8 border border-slate-700/50">
+                    <div class="grid h-12 w-12 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-lg mb-4">💡</div>
+                    <h3 class="text-xl font-semibold mb-4">Tips Fitness</h3>
+                    <p class="text-slate-300">Consejos y recomendaciones para optimizar tu entrenamiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="py-24 sm:py-32 bg-dark-800/30">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+                    ¡Comienza tu transformación hoy!
+                </h2>
+                <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+                    Descarga Win-E Fitness y comienza tu viaje hacia una vida más saludable y activa.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="inline-flex items-center justify-center rounded-xl bg-primary-500 px-6 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Descargar para Android
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center rounded-xl bg-white/10 px-6 py-3 text-sm font-semibold hover:bg-white/20 transition-colors">
+                        Descargar para iOS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900/50 border-t border-slate-700/50">
+        <div class="mx-auto max-w-7xl px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <a href="../../" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <div class="grid h-8 w-8 place-items-center rounded-lg bg-primary-500 text-dark-900 font-black">F</div>
+                        <span class="text-lg font-semibold">FJDVS</span>
+                    </a>
+                </div>
+                <div class="text-slate-400 text-sm">
+                    &copy; 2025 FJDVS. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

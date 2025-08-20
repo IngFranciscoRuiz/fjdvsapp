@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator | Calculadora de IMC</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Calculadora de Índice de Masa Corporal simple y precisa. Interfaz intuitiva para monitorear tu salud de manera rápida y confiable.">
+    <meta name="keywords" content="BMI, IMC, calculadora, salud, peso, altura, índice masa corporal">
+    <meta name="author" content="FJDVS">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to bottom, #020617, #0f172a, #1e293b);
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.6);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-30 glass-effect">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-3">
+                <a href="../../" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                    <div class="grid h-8 w-8 place-items-center rounded-lg bg-primary-500 text-dark-900 font-black">F</div>
+                    <span class="text-lg font-semibold">FJDVS</span>
+                </a>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-lg font-bold">BMI Calculator</span>
+            </div>
+            <div class="flex items-center gap-3">
+                <a href="../../" class="rounded-xl bg-white/10 px-3 py-2 text-sm hover:bg-white/20 transition-colors">Volver</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+                    BMI 
+                    <span class="text-primary-400">Calculator</span>
+                </h1>
+                <p class="mt-6 text-lg leading-8 text-slate-300 max-w-3xl mx-auto">
+                    Calculadora de Índice de Masa Corporal simple y precisa. Interfaz intuitiva para monitorear 
+                    tu salud de manera rápida y confiable.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="#calculator" class="rounded-xl bg-primary-500 px-6 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Calcular IMC
+                    </a>
+                    <a href="#download" class="text-sm font-semibold leading-6 text-slate-300 hover:text-white transition-colors">
+                        Descargar App <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section id="calculator" class="py-24 sm:py-32">
+        <div class="mx-auto max-w-2xl px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                    Calculadora de IMC
+                </h2>
+                <p class="text-lg text-slate-300">
+                    Ingresa tu peso y altura para calcular tu Índice de Masa Corporal
+                </p>
+            </div>
+            
+            <div class="bg-dark-800/50 rounded-2xl p-8 border border-slate-700/50">
+                <form class="space-y-6">
+                    <div>
+                        <label for="weight" class="block text-sm font-medium text-slate-300 mb-2">Peso (kg)</label>
+                        <input type="number" id="weight" name="weight" step="0.1" min="20" max="300" 
+                               class="w-full px-4 py-3 bg-dark-900/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                               placeholder="Ej: 70.5">
+                    </div>
+                    
+                    <div>
+                        <label for="height" class="block text-sm font-medium text-slate-300 mb-2">Altura (cm)</label>
+                        <input type="number" id="height" name="height" step="0.1" min="100" max="250" 
+                               class="w-full px-4 py-3 bg-dark-900/50 border border-slate-600 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                               placeholder="Ej: 170">
+                    </div>
+                    
+                    <button type="button" onclick="calculateBMI()" 
+                            class="w-full rounded-xl bg-primary-500 px-6 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Calcular IMC
+                    </button>
+                </form>
+                
+                <div id="result" class="mt-8 p-6 bg-dark-900/30 rounded-xl border border-slate-600 hidden">
+                    <h3 class="text-lg font-semibold mb-2">Tu resultado:</h3>
+                    <div id="bmi-value" class="text-2xl font-bold text-primary-400 mb-2"></div>
+                    <div id="bmi-category" class="text-slate-300"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="py-24 sm:py-32 bg-dark-800/30">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+                    Características
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="grid h-16 w-16 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-2xl mx-auto mb-4">⚡</div>
+                    <h3 class="text-xl font-semibold mb-4">Cálculo Rápido</h3>
+                    <p class="text-slate-300">Obtén tu IMC en segundos con solo ingresar peso y altura.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="grid h-16 w-16 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-2xl mx-auto mb-4">📱</div>
+                    <h3 class="text-xl font-semibold mb-4">Interfaz Simple</h3>
+                    <p class="text-slate-300">Diseño intuitivo y fácil de usar en cualquier dispositivo.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="grid h-16 w-16 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-2xl mx-auto mb-4">💾</div>
+                    <h3 class="text-xl font-semibold mb-4">Historial</h3>
+                    <p class="text-slate-300">Guarda y compara tus resultados a lo largo del tiempo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+                    Descarga la app completa
+                </h2>
+                <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+                    Obtén la versión completa con más funciones y sin anuncios.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="inline-flex items-center justify-center rounded-xl bg-primary-500 px-6 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Descargar para Android
+                    </a>
+                    <a href="#" class="inline-flex items-center justify-center rounded-xl bg-white/10 px-6 py-3 text-sm font-semibold hover:bg-white/20 transition-colors">
+                        Descargar para iOS
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900/50 border-t border-slate-700/50">
+        <div class="mx-auto max-w-7xl px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <a href="../../" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                        <div class="grid h-8 w-8 place-items-center rounded-lg bg-primary-500 text-dark-900 font-black">F</div>
+                        <span class="text-lg font-semibold">FJDVS</span>
+                    </a>
+                </div>
+                <div class="text-slate-400 text-sm">
+                    &copy; 2025 FJDVS. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function calculateBMI() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const height = parseFloat(document.getElementById('height').value);
+            
+            if (!weight || !height) {
+                alert('Por favor ingresa peso y altura válidos');
+                return;
+            }
+            
+            const heightInMeters = height / 100;
+            const bmi = weight / (heightInMeters * heightInMeters);
+            
+            let category = '';
+            let categoryColor = '';
+            
+            if (bmi < 18.5) {
+                category = 'Bajo peso';
+                categoryColor = 'text-blue-400';
+            } else if (bmi < 25) {
+                category = 'Peso normal';
+                categoryColor = 'text-green-400';
+            } else if (bmi < 30) {
+                category = 'Sobrepeso';
+                categoryColor = 'text-yellow-400';
+            } else {
+                category = 'Obesidad';
+                categoryColor = 'text-red-400';
+            }
+            
+            document.getElementById('bmi-value').textContent = `IMC: ${bmi.toFixed(1)}`;
+            document.getElementById('bmi-category').textContent = category;
+            document.getElementById('bmi-category').className = `text-slate-300 ${categoryColor}`;
+            document.getElementById('result').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

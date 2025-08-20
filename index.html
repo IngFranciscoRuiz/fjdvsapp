@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FJDVS | Apps que sí resuelven</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Ecosistema de aplicaciones móviles funcionales y eficientes. FabrikApp, Win-E Fitness, BMI Calculator y más apps que resuelven problemas reales.">
+    <meta name="keywords" content="apps móviles, desarrollo, productividad, fitness, gestión, calculadoras">
+    <meta name="author" content="FJDVS">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fjdvs.app/">
+    <meta property="og:title" content="FJDVS | Apps que sí resuelven">
+    <meta property="og:description" content="Ecosistema de aplicaciones móviles funcionales y eficientes.">
+    <meta property="og:image" content="https://fjdvs.app/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://fjdvs.app/">
+    <meta property="twitter:title" content="FJDVS | Apps que sí resuelven">
+    <meta property="twitter:description" content="Ecosistema de aplicaciones móviles funcionales y eficientes.">
+    <meta property="twitter:image" content="https://fjdvs.app/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                        },
+                        dark: {
+                            800: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(to bottom, #020617, #0f172a, #1e293b);
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.6);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg text-white min-h-screen">
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-30 glass-effect">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-3">
+                <div class="grid h-10 w-10 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-xl">F</div>
+                <span class="text-xl font-bold tracking-tight">FJDVS</span>
+            </div>
+            <nav class="hidden gap-8 md:flex text-sm text-slate-200">
+                <a href="#apps" class="hover:text-white transition-colors">Apps</a>
+                <a href="#about" class="hover:text-white transition-colors">Nosotros</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contacto</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="rounded-xl bg-primary-500 px-4 py-2 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">Contáctanos</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative overflow-hidden">
+        <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold tracking-tight sm:text-6xl">
+                    Apps que sí 
+                    <span class="text-primary-400">resuelven</span>
+                </h1>
+                <p class="mt-6 text-lg leading-8 text-slate-300 max-w-3xl mx-auto">
+                    Desarrollamos aplicaciones móviles funcionales y eficientes para resolver problemas reales. 
+                    Desde gestión empresarial hasta herramientas de productividad personal.
+                </p>
+                <div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="#apps" class="rounded-xl bg-primary-500 px-6 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Explorar Apps
+                    </a>
+                    <a href="#about" class="text-sm font-semibold leading-6 text-slate-300 hover:text-white transition-colors">
+                        Conoce más <span aria-hidden="true">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APPS SECTION -->
+    <section id="apps" class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">
+                    Nuestro Ecosistema de Apps
+                </h2>
+                <p class="mt-4 text-lg text-slate-300">
+                    Cada aplicación está diseñada para resolver necesidades específicas de manera eficiente
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- FabrikApp -->
+                <div class="card-hover bg-dark-800/50 rounded-2xl p-8 border border-slate-700/50">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="grid h-12 w-12 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-lg">F</div>
+                        <h3 class="text-xl font-semibold">FabrikApp</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        Gestión completa de fórmulas, inventario y producción para fábricas de productos de limpieza. 
+                        100% offline y optimizada para el trabajo diario.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Gestión</span>
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Offline</span>
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Producción</span>
+                    </div>
+                    <a href="apps/fabrikapp/" class="inline-flex items-center justify-center w-full rounded-xl bg-primary-500 px-4 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Ver App
+                    </a>
+                </div>
+
+                <!-- Win-E Fitness -->
+                <div class="card-hover bg-dark-800/50 rounded-2xl p-8 border border-slate-700/50">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="grid h-12 w-12 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-lg">W</div>
+                        <h3 class="text-xl font-semibold">Win-E Fitness</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        App completa de entrenamiento con rutinas personalizadas, seguimiento de progreso y tips fitness 
+                        para alcanzar tus objetivos de forma saludable.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Fitness</span>
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Entrenamiento</span>
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Salud</span>
+                    </div>
+                    <a href="apps/winefitness/" class="inline-flex items-center justify-center w-full rounded-xl bg-primary-500 px-4 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Ver App
+                    </a>
+                </div>
+
+                <!-- BMI Calculator -->
+                <div class="card-hover bg-dark-800/50 rounded-2xl p-8 border border-slate-700/50">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="grid h-12 w-12 place-items-center rounded-xl bg-primary-500 text-dark-900 font-black text-lg">B</div>
+                        <h3 class="text-xl font-semibold">BMI Calculator</h3>
+                    </div>
+                    <p class="text-slate-300 mb-6">
+                        Calculadora de Índice de Masa Corporal simple y precisa. Interfaz intuitiva para monitorear 
+                        tu salud de manera rápida y confiable.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-6">
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Salud</span>
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Calculadora</span>
+                        <span class="px-3 py-1 bg-primary-500/20 text-primary-400 text-xs rounded-full">Simple</span>
+                    </div>
+                    <a href="apps/bmi/" class="inline-flex items-center justify-center w-full rounded-xl bg-primary-500 px-4 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Ver App
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 sm:py-32 bg-dark-800/30">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+                        ¿Por qué elegir FJDVS?
+                    </h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="grid h-8 w-8 place-items-center rounded-lg bg-primary-500 text-dark-900 font-semibold">✓</div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Funcionalidad Real</h3>
+                                <p class="text-slate-300">Cada app resuelve un problema específico, no son apps genéricas.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="grid h-8 w-8 place-items-center rounded-lg bg-primary-500 text-dark-900 font-semibold">✓</div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Experiencia Optimizada</h3>
+                                <p class="text-slate-300">Interfaces intuitivas y flujos de trabajo eficientes.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0">
+                                <div class="grid h-8 w-8 place-items-center rounded-lg bg-primary-500 text-dark-900 font-semibold">✓</div>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold mb-2">Desarrollo Continuo</h3>
+                                <p class="text-slate-300">Mejoras constantes basadas en feedback real de usuarios.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center lg:text-right">
+                    <div class="inline-block p-8 bg-dark-800/50 rounded-2xl border border-slate-700/50">
+                        <div class="text-4xl font-bold text-primary-400 mb-2">3+</div>
+                        <div class="text-slate-300">Apps Funcionales</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+                    ¿Necesitas una app personalizada?
+                </h2>
+                <p class="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+                    Si tienes una idea para una aplicación que resuelva un problema específico, 
+                    estamos aquí para ayudarte a hacerla realidad.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:contacto@fjdvs.app" class="inline-flex items-center justify-center rounded-xl bg-primary-500 px-6 py-3 text-sm font-semibold text-dark-900 hover:bg-primary-400 transition-colors">
+                        Escríbenos
+                    </a>
+                    <a href="https://wa.me/1234567890" target="_blank" class="inline-flex items-center justify-center rounded-xl bg-white/10 px-6 py-3 text-sm font-semibold hover:bg-white/20 transition-colors">
+                        WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-900/50 border-t border-slate-700/50">
+        <div class="mx-auto max-w-7xl px-6 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <div class="grid h-8 w-8 place-items-center rounded-lg bg-primary-500 text-dark-900 font-black">F</div>
+                    <span class="text-lg font-semibold">FJDVS</span>
+                </div>
+                <div class="text-slate-400 text-sm">
+                    &copy; 2025 FJDVS. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
